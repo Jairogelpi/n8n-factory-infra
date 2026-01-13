@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: n8n-factory
+    runtime: docker
+    repo: https://github.com/n8n-io/n8n # Usamos la imagen oficial directamente
+    plan: starter # El plan gratuito no soporta discos persistentes, necesitas el Starter ($7/mes aprox)
+    disk:
+      name: n8n-data
+      mountPath: /home/node/.n8n
+      sizeGB: 1
+    envVars:
+      - key: N8N_PORT
+        value: 10000
+      - key: WEBHOOK_URL
+        sync: false # Render te dará esto, lo rellenaremos luego
+      - key: N8N_ENCRYPTION_KEY
+        generateValue: true # Render generará una clave segura automática
+      - key: N8N_ basic_auth_active
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: admin # CAMBIA ESTO LUEGO
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: tu_password_seguro # CAMBIA ESTO LUEGO
+    startCommand: "n8n start"
