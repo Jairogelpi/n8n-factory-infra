@@ -1,6 +1,7 @@
 services:
   - type: web
     name: n8n-factory
+    runtime: image
     image:
       url: n8nio/n8n:latest
     plan: starter # El plan gratuito no soporta discos persistentes, necesitas el Starter ($7/mes aprox)
