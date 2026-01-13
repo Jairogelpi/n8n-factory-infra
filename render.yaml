@@ -1,6 +1,7 @@
 services:
   - type: web
     name: n8n-factory
+    region: frankfurt
     runtime: image
     image:
       url: n8nio/n8n:latest
