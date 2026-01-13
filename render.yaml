@@ -15,7 +15,7 @@ services:
         sync: false # Render te dará esto, lo rellenaremos luego
       - key: N8N_ENCRYPTION_KEY
         generateValue: true # Render generará una clave segura automática
-      - key: N8N_ basic_auth_active
+      - key: N8N_BASIC_AUTH_ACTIVE
         value: true
       - key: N8N_BASIC_AUTH_USER
         value: admin # CAMBIA ESTO LUEGO
